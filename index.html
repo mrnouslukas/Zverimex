@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mrnous - Objednávka</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Objednávka</h1>
+
+    <div class="input-row">
+      <label for="krmivo">Vyberte krmivo:</label>
+      <select id="krmivo">
+        <option value="150">Psí žrádlo 150 Kč/kg</option>
+        <option value="120">Kočičí žrádlo 120 Kč/kg</option>
+        <option value="50">Žrádlo pro rybičky 50 Kč/kg</option>
+        <option value="800">Žrádlo pro tygra 800 Kč/kg</option>
+      </select>
+      <label for="aktualniCena" style="margin-left: 20px"
+        >Aktuální cena krmiva:</label
+      >
+      <input type="text" id="aktualniCena" readonly />
+    </div>
+
+    <div class="input-row">
+      <label for="mnozstvi">Počet kilogramů:</label>
+      <input type="number" id="mnozstvi" min="1" value="1" />
+    </div>
+
+    <label>Volitelné vlastnosti krmiva:</label>
+    <div class="input-row">
+      <input type="checkbox" id="bio" value="0.3" /> Bio kvalita (+30%)
+    </div>
+    <div class="input-row">
+      <input type="checkbox" id="premium" value="0.5" /> Extra premium kvalita
+      (+50%)
+    </div>
+    <div class="input-row">
+      <input type="checkbox" id="nekvalita" value="-0.15" /> Extra nekvalita
+      (-15%)
+    </div>
+    <div class="input-row">
+      <input type="checkbox" id="darek" value="500" /> Dárkové balení (+500 Kč)
+    </div>
+
+    <label>Doprava:</label>
+    <div class="input-row">
+      <input type="radio" name="doprava" value="0" checked /> Osobní odběr (bez
+      příplatku)
+    </div>
+    <div class="input-row">
+      <input type="radio" name="doprava" value="0.1" /> Firemní kurýr (+10%)
+    </div>
+    <div class="input-row">
+      <input type="radio" name="doprava" value="250" /> Česká pošta (+250 Kč)
+    </div>
+
+    <div class="result">
+      <div class="input-row">
+        <label for="cena">Celková cena:</label>
+        <input type="text" id="cena" readonly />
+      </div>
+    </div>
+
+    <div class="input-row">
+      <label for="castka">Zadejte částku, kterou máte k utracení:</label>
+      <input type="number" id="castka" min="0" />
+      <button type="button" onclick="zkontrolujCenu()">Zkontrolovat</button>
+    </div>
+
+    <p id="vysledek"></p>
+
+    <h2>Kontaktní údaje</h2>
+    <div class="input-row">
+      <label for="jmeno">Jméno:</label>
+      <input type="text" id="jmeno" oninput="validateText(this)" />
+      <label for="prijmeni">Příjmení:</label>
+      <input type="text" id="prijmeni" oninput="validateText(this)" />
+    </div>
+
+    <div class="input-row">
+      <label for="email">Email:</label>
+      <input type="email" id="email" oninput="validateEmail()" required />
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

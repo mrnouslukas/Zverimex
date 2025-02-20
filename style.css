@@ -1,0 +1,38 @@
+label,
+input,
+select,
+checkbox,
+radio {
+  margin: 10px 0;
+  display: inline-block;
+}
+.result {
+  font-weight: bold;
+  margin-top: 20px;
+}
+.input-row {
+  display: flex;
+  align-items: center;
+}
+.input-row label {
+  margin-right: 10px;
+}
+.input-group {
+  display: flex;
+  align-items: center;
+}
+.input-group label {
+  margin-right: 10px;
+}
+.input-group input {
+  margin-right: 20px;
+}
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-row label {
+  margin-right: 5px;
+}
